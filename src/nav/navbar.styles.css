@@ -1,7 +1,11 @@
 .main-nav {
-  background-color: teal;
+  background-color: #4c8bf5;
+  height: 100px;
+
+  align-items: center;
 }
 
 a {
   color: black;
+  font-size: x-large;
 }
