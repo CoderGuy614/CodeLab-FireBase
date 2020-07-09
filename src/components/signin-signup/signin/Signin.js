@@ -40,7 +40,7 @@ const Signin = () => {
 
   const signInForm = () => (
     <Form onSubmit={handleSubmit}>
-      <h2>Already have an account? Sign In.</h2>
+      <h2>Have an account? Sign In.</h2>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -72,6 +72,7 @@ const Signin = () => {
           className="signInWithGoogleButton"
           onClick={signInWithGoogle}
         >
+          <i class="fab fa-google"></i>
           Sign In with Google
         </Button>
         <Button
@@ -79,6 +80,7 @@ const Signin = () => {
           type="submit"
           className="signInWithFacebookButton"
         >
+          <i class="fab fa-facebook-square"></i>
           Sign In with Facebook
         </Button>
       </span>
