@@ -1,11 +1,14 @@
 .main-nav {
-  background-color: #4c8bf5;
-  height: 100px;
-
-  align-items: center;
+  display: flex;
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-a {
-  color: black;
-  font-size: x-large;
+.nav-brand {
+  justify-content: flex-end;
+}
+
+.brand-name {
+  font-size: xx-large;
 }

@@ -13,22 +13,18 @@ const NavBar = () => {
   };
 
   return (
-    <Nav className="main-nav" fill={true} defaultActiveKey="/home" as="ul">
-      <Logo className="logo" />
-      <Nav.Item as="li">
-        <Nav.Link href="/home">Active</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="about" eventKey="link-1">
-          Link
-        </Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="contact" eventKey="link-2">
-          Link
-        </Nav.Link>
-      </Nav.Item>
-    </Nav>
+    // <div className='main-nav'>
+    <Navbar className="main-nav" bg="primary" variant="dark">
+      <Navbar.Brand className="nav-brand" href="/">
+        <Logo /> <span className="brand-name">CODELAB</span>
+      </Navbar.Brand>
+      <Nav className="nav-links">
+        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/articles">ARTICLES</Nav.Link>
+        <Nav.Link href="/signin">SIGNIN</Nav.Link>
+      </Nav>
+    </Navbar>
+    // </div>
   );
 };
 
