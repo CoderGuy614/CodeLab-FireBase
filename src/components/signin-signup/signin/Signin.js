@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import "./sign-up-form.css";
+import Alert from "react-bootstrap/Alert";
+import "./sign-in-form.css";
 
-import { auth, createUserProfileDocument } from "../firebase/firebaseUtils";
+import {
+  auth,
+  createUserWithEmailAndPassword,
+  createUserProfileDocument,
+} from "../../../firebase/firebaseUtils";
 
-const Signup = () => {
+const Signin = () => {
   const [values, setValues] = useState({
     email: "",
     password: "",
     error: "",
+    success: "",
     loading: false,
     redirect: false,
   });
@@ -20,20 +26,20 @@ const Signup = () => {
     console.log(values);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-      });
+  const alert = () => {
+    if (error) {
+      return <Alert variant="danger">{error}</Alert>;
+    }
   };
 
-  const signUpForm = () => (
-    <Form className="sign-up-form" onSubmit={handleSubmit}>
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const { user } = await auth.createUserWithEmailAndPassword(email, password);
+  };
+
+  const signInForm = () => (
+    <Form onSubmit={handleSubmit}>
+      <h2>Already have an account? Sign In.</h2>
       <Form.Group controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
@@ -42,9 +48,6 @@ const Signup = () => {
           value={values.email}
           onChange={handleChange("email")}
         />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
       </Form.Group>
 
       <Form.Group controlId="formBasicPassword">
@@ -56,16 +59,14 @@ const Signup = () => {
           onChange={handleChange("password")}
         />
       </Form.Group>
-      <Form.Group controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
+
+      {alert()}
       <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>
   );
 
-  return <div className="container">{signUpForm()}</div>;
+  return <div className="sign-in-form">{signInForm()}</div>;
 };
-
-export default Signup;
+export default Signin;
