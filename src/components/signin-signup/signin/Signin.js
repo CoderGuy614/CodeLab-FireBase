@@ -8,6 +8,7 @@ import {
   auth,
   createUserWithEmailAndPassword,
   createUserProfileDocument,
+  signInWithGoogle,
 } from "../../../firebase/firebaseUtils";
 
 const Signin = () => {
@@ -61,9 +62,26 @@ const Signin = () => {
       </Form.Group>
 
       {alert()}
-      <Button variant="primary" type="submit">
+      <Button className="submit" variant="primary" type="submit">
         Submit
       </Button>
+      <span className="inline-buttons">
+        <Button
+          variant="secondary"
+          type="submit"
+          className="signInWithGoogleButton"
+          onClick={signInWithGoogle}
+        >
+          Sign In with Google
+        </Button>
+        <Button
+          variant="secondary"
+          type="submit"
+          className="signInWithFacebookButton"
+        >
+          Sign In with Facebook
+        </Button>
+      </span>
     </Form>
   );
 

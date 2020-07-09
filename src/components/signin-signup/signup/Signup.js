@@ -8,6 +8,7 @@ import {
   auth,
   createUserWithEmailAndPassword,
   createUserProfileDocument,
+  fetchSignInMethodsForEmail,
 } from "../../../firebase/firebaseUtils";
 
 const Signup = () => {
@@ -24,7 +25,6 @@ const Signup = () => {
   const { email, password, confirmPassword, error, loading, redirect } = values;
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
-    console.log(values);
   };
 
   const alert = () => {
@@ -39,9 +39,10 @@ const Signup = () => {
       setValues({ ...values, error: "Passwords Do Not Match" });
       return;
     }
-    const { user } = await auth.createUserWithEmailAndPassword(email, password);
-
     try {
+      const { user } = await auth
+        .createUserWithEmailAndPassword(email, password)
+        .then((response) => console.log(response));
       await createUserProfileDocument(user);
       setValues({
         email: "",
@@ -51,9 +52,9 @@ const Signup = () => {
       });
     } catch (error) {
       if (error) {
-        var errorCode = error.code;
         var errorMessage = error.message;
-        console.log(errorCode, errorMessage);
+        setValues({ ...values, success: false, error: errorMessage });
+        console.log(errorMessage);
       }
     }
   };
