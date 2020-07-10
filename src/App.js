@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import "./custom_theme.css";
 import NavBar from "./nav/NavBar";
@@ -46,7 +46,13 @@ class App extends Component {
         <NavBar currentUser={this.state.currentUser} />
         <Switch>
           <Route exact path="/" component={Homepage} />
-          <Route path="/signin" component={SignInAndSignUp} />
+          <Route
+            exact
+            path="/signin"
+            render={() =>
+              this.state.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
+            }
+          />
         </Switch>
       </div>
     );

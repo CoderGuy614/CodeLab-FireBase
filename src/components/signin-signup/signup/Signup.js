@@ -16,8 +16,8 @@ const Signup = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    error: "",
-    success: "",
+    error: false,
+    success: false,
     loading: false,
     redirect: false,
   });
@@ -51,7 +51,11 @@ const Signup = () => {
         loading: false,
       });
     } catch (error) {
-      if (error) {
+      console.log(error);
+      if (
+        (error && error.code == "auth/invalid-email") ||
+        error.code == "auth/email-already-in-use"
+      ) {
         var errorMessage = error.message;
         setValues({ ...values, success: false, error: errorMessage });
         console.log(errorMessage);

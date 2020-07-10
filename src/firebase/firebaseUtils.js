@@ -35,6 +35,11 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const checkIfCurrentUser = async (email) => {
+  const snapshot = await firebase.firestore().collection("users").get();
+  return snapshot.docs.map((doc) => doc.data());
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
@@ -42,6 +47,8 @@ export const firestore = firebase.firestore();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
-export const fetchSignInMethodsForEmail = () =>
-  auth.fetchSignInMethodsForEmail();
+export const fetchProvidersForEmail = () => auth.fetchProvidersForEmail();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export const facebookProvider = new firebase.auth.FacebookAuthProvider();
+export const emailProvider = new firebase.auth.EmailAuthProvider();
 export default firebase;

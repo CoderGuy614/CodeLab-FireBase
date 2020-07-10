@@ -9,6 +9,10 @@ import {
   createUserWithEmailAndPassword,
   createUserProfileDocument,
   signInWithGoogle,
+  googleProvider,
+  facebookProvider,
+  emailProvider,
+  checkIfCurrentUser,
 } from "../../../firebase/firebaseUtils";
 
 const Signin = () => {
@@ -35,7 +39,32 @@ const Signin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { user } = await auth.createUserWithEmailAndPassword(email, password);
+    try {
+      checkIfCurrentUser(email).then((dataArray) => {
+        const matches = dataArray.filter((user) => user.email == email);
+        console.log(matches);
+      });
+
+      await auth.signInWithEmailAndPassword(email, password);
+      setValues({
+        ...values,
+        error: false,
+        success: true,
+        email: "",
+        password: "",
+        loading: false,
+      });
+    } catch (error) {
+      console.log(error);
+      if (error && error.code == "auth/wrong-password") {
+        setValues({
+          ...values,
+          error: error.message,
+          success: false,
+          loading: false,
+        });
+      }
+    }
   };
 
   const signInForm = () => (
@@ -72,7 +101,7 @@ const Signin = () => {
           className="signInWithGoogleButton"
           onClick={signInWithGoogle}
         >
-          <i class="fab fa-google"></i>
+          <i className="fab fa-google"></i>
           Sign In with Google
         </Button>
         <Button
@@ -80,7 +109,7 @@ const Signin = () => {
           type="submit"
           className="signInWithFacebookButton"
         >
-          <i class="fab fa-facebook-square"></i>
+          <i className="fab fa-facebook-square"></i>
           Sign In with Facebook
         </Button>
       </span>
