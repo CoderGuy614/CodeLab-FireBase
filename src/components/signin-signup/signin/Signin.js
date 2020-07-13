@@ -80,8 +80,6 @@ const Signin = () => {
       }
     } catch (error) {
       if (error.code === "auth/account-exists-with-different-credential") {
-        const errorCode = error.code;
-        const errorMessage = error.message;
         const credential = error.credential;
         const email = error.email;
         const methods = await auth.fetchSignInMethodsForEmail(email);
