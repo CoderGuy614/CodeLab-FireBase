@@ -6,9 +6,7 @@ import "./sign-up-form.css";
 
 import {
   auth,
-  createUserWithEmailAndPassword,
   createUserProfileDocument,
-  fetchSignInMethodsForEmail,
 } from "../../../firebase/firebaseUtils";
 
 const Signup = () => {
