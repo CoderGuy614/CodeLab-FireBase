@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React from "react";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
@@ -10,12 +9,6 @@ import { ReactComponent as Logo } from "../assets/crown.svg";
 import { auth } from "../firebase/firebaseUtils";
 
 const NavBar = ({ currentUser }) => {
-  const [key, setKey] = useState("home");
-  const [redirect, setRedirect] = useState(false);
-  const handleSelect = (key) => {
-    setKey(key);
-  };
-
   const signOut = () => {
     auth.signOut();
   };
@@ -28,7 +21,9 @@ const NavBar = ({ currentUser }) => {
         )}
       </Navbar.Brand>
       <Nav className="nav-links">
-        <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link onClick={() => alert("CLICKED")} href="/">
+          Home
+        </Nav.Link>
         <Nav.Link href="/articles">ARTICLES</Nav.Link>
         {currentUser ? (
           <Button onClick={() => signOut()}>SIGNOUT</Button>

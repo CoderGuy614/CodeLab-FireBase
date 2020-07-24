@@ -3,7 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import "./custom_theme.css";
 import NavBar from "./nav/NavBar";
-import Homepage from "./pages/homepage/homepage";
+import GridPage from "./pages/homepage/gridPage";
+import Articles from "./pages/articles/articles";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
@@ -45,7 +46,13 @@ class App extends Component {
       <div>
         <NavBar currentUser={this.state.currentUser} />
         <Switch>
-          <Route exact path="/" component={Homepage} />
+          <Route
+            exact
+            path="/"
+            render={() =>
+              !this.state.currentUser ? <Redirect to="/signin" /> : <GridPage />
+            }
+          />
           <Route
             exact
             path="/signin"
@@ -53,6 +60,7 @@ class App extends Component {
               this.state.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
             }
           />
+          <Route exact path="/articles" component={Articles} />
         </Switch>
       </div>
     );
