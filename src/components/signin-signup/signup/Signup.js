@@ -99,7 +99,7 @@ const Signup = () => {
     </Form>
   );
 
-  return <div className="sign-up-form">{signUpForm()}</div>;
+  return <>{signUpForm()}</>;
 };
 
 export default Signup;
