@@ -1,6 +1,31 @@
-.homepage {
-  width: 850px;
-  display: flex;
-  justify-content: space-between;
-  margin: 30px auto;
+.container {
+  margin: 0px;
+  width: 50%;
+}
+
+.grid {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-gap: 10px;
+  height: calc(100vh - 80px);
+}
+
+.homepage-main-content {
+  grid-column: 2 / span 3;
+  grid-row: 1 / span 2;
+  border: 1px solid green;
+}
+
+.homepage-secondary-content {
+  grid-column: 2 / span 3;
+  grid-row: 3 / 4;
+  border: 1px solid orange;
+}
+
+.homepage-sidebar {
+  grid-column: 1 / span 1;
+  grid-row: 1 / 4;
+  border: 1px solid purple;
 }
