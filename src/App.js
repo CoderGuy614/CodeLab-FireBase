@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import "./custom_theme.css";
-import NavBar from "./nav/NavBar";
+import NavBar from "./components/nav/NavBar";
 import GridPage from "./pages/homepage/gridPage";
 import Articles from "./pages/articles/articles";
+import Alert from "./components/alert/Alert";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
+
+//Redux
+import { Provider } from "react-redux";
+import store from "./redux/store";
 
 class App extends Component {
   constructor() {
@@ -43,8 +48,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <Provider store={store}>
         <NavBar currentUser={this.state.currentUser} />
+        <Alert />
         <Switch>
           <Route
             exact
@@ -62,7 +68,7 @@ class App extends Component {
           />
           <Route exact path="/articles" component={Articles} />
         </Switch>
-      </div>
+      </Provider>
     );
   }
 }

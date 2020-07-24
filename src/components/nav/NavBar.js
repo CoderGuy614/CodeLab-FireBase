@@ -1,14 +1,16 @@
 import React from "react";
+import { connect } from "react-redux";
+import { setAlert } from "../../redux/actions/alert";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import "./navbar.styles.css";
 
-import { ReactComponent as Logo } from "../assets/crown.svg";
+import { ReactComponent as Logo } from "../../assets/crown.svg";
 
-import { auth } from "../firebase/firebaseUtils";
+import { auth } from "../../firebase/firebaseUtils";
 
-const NavBar = ({ currentUser }) => {
+const NavBar = ({ currentUser, setAlert }) => {
   const signOut = () => {
     auth.signOut();
   };
@@ -21,7 +23,7 @@ const NavBar = ({ currentUser }) => {
         )}
       </Navbar.Brand>
       <Nav className="nav-links">
-        <Nav.Link onClick={() => alert("CLICKED")} href="/">
+        <Nav.Link onClick={() => alert("ITS WORKING")} href="/">
           Home
         </Nav.Link>
         <Nav.Link href="/articles">ARTICLES</Nav.Link>
@@ -35,4 +37,4 @@ const NavBar = ({ currentUser }) => {
   );
 };
 
-export default NavBar;
+export default connect(null, { setAlert })(NavBar);
