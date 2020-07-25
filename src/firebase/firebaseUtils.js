@@ -51,6 +51,18 @@ export const postMessage = async (message) => {
   }
 };
 
+export const getMessages = async () => {
+  try {
+    const querySnapshot = await firebase
+      .firestore()
+      .collection("messages")
+      .get();
+    return querySnapshot;
+  } catch (error) {
+    return error;
+  }
+};
+
 firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
