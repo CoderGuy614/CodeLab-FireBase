@@ -40,8 +40,18 @@ export const checkIfCurrentUser = async (email) => {
   return snapshot.docs.map((doc) => doc.data());
 };
 
-firebase.initializeApp(config);
+export const postMessage = async (message) => {
+  try {
+    const success = await firebase.firestore().collection("messages").add({
+      message,
+    });
+    return success;
+  } catch (error) {
+    return error;
+  }
+};
 
+firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 export const googleProvider = new firebase.auth.GoogleAuthProvider();

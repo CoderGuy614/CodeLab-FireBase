@@ -20,6 +20,7 @@ const NavBar = ({ currentUser, setAlert }) => {
       </Navbar.Brand>
       <Nav className="nav-links">
         <Nav.Link href="/">Home</Nav.Link>
+        <Nav.Link href="/post">Post</Nav.Link>
         <Nav.Link href="/articles">ARTICLES</Nav.Link>
         {currentUser ? (
           <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
