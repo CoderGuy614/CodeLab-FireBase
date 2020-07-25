@@ -12,6 +12,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 //Redux
 import { Provider } from "react-redux";
 import store from "./redux/store";
+import { setAlert } from "./redux/actions/alert";
 
 class App extends Component {
   constructor() {
@@ -33,8 +34,6 @@ class App extends Component {
               ...snapShot.data(),
             },
           });
-
-          console.log(this.state);
         });
       }
 

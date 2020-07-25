@@ -7,13 +7,9 @@ import Button from "react-bootstrap/Button";
 import "./navbar.styles.css";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
-
 import { auth } from "../../firebase/firebaseUtils";
 
 const NavBar = ({ currentUser, setAlert }) => {
-  const signOut = () => {
-    auth.signOut();
-  };
   return (
     <Navbar className="main-nav" bg="primary" variant="dark">
       <Navbar.Brand className="nav-brand" href="/">
@@ -23,12 +19,10 @@ const NavBar = ({ currentUser, setAlert }) => {
         )}
       </Navbar.Brand>
       <Nav className="nav-links">
-        <Nav.Link onClick={() => alert("ITS WORKING")} href="/">
-          Home
-        </Nav.Link>
+        <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/articles">ARTICLES</Nav.Link>
         {currentUser ? (
-          <Button onClick={() => signOut()}>SIGNOUT</Button>
+          <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
         ) : (
           <Nav.Link href="/signin">SIGNIN</Nav.Link>
         )}

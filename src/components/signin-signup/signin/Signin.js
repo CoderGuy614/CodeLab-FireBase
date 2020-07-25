@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import Spinner from "../../loading/Spinner";
 import Alert from "react-bootstrap/Alert";
 import "./sign-in-form.css";
 
@@ -18,12 +19,12 @@ const Signin = () => {
     error: "",
     success: "",
     redirect: false,
+    loading: false,
   });
 
   const { email, password, error, loading, redirect } = values;
   const handleChange = (name) => (event) => {
     setValues({ ...values, error: false, [name]: event.target.value });
-    console.log(values);
   };
 
   const alert = () => {
@@ -34,11 +35,13 @@ const Signin = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setValues({ ...values, loading: true });
     try {
       const methods = await auth.fetchSignInMethodsForEmail(email);
       if (methods.includes("google.com")) {
         return setValues({
           ...values,
+          loading: false,
           error:
             "This email is associated with a Goggle Account. Please Sign In with Google",
         });
@@ -47,7 +50,7 @@ const Signin = () => {
       checkIfCurrentUser(email).then((dataArray) => {
         const matches = dataArray.filter((user) => user.email == email);
         if (matches.length > 0) {
-          setValues({ ...values, error: "Account with this " });
+          setValues({ ...values, error: "Account with this ", loading: false });
         }
       });
 
@@ -56,6 +59,7 @@ const Signin = () => {
         ...values,
         error: false,
         success: true,
+        loading: false,
         email: "",
         password: "",
       });
@@ -65,6 +69,7 @@ const Signin = () => {
           ...values,
           error: error.message,
           success: false,
+          loading: false,
         });
       }
     }
@@ -76,14 +81,13 @@ const Signin = () => {
       if (loginResult.credential) {
         const token = loginResult.credential.accessToken;
         const user = loginResult.user;
-        console.log("FROM FB LOGIN", token, user);
       }
     } catch (error) {
       if (error.code === "auth/account-exists-with-different-credential") {
         const credential = error.credential;
         const email = error.email;
         const methods = await auth.fetchSignInMethodsForEmail(email);
-        console.log("METHODS", methods);
+
         if (methods[0] === "google.com") {
           signInWithGoogle()
             .then((user) => {
@@ -147,6 +151,6 @@ const Signin = () => {
     </Form>
   );
 
-  return <>{signInForm()}</>;
+  return <>{loading ? <Spinner /> : signInForm()}</>;
 };
 export default Signin;
