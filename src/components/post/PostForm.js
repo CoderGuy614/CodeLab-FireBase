@@ -6,27 +6,28 @@ import Spinner from "../loading/Spinner";
 import { firestore } from "../../firebase/firebaseUtils";
 import "./post-form.css";
 
-const PostForm = ({ setAlert }) => {
-  const [message, setMessage] = useState("");
-  const [messages, setMessages] = useState([]);
+const PostForm = ({ currentUser, setAlert }) => {
+  const [post, setPost] = useState({ message: "" });
+  const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setMessage(e.target.value);
+    setPost({ ...post, message: e.target.value });
   };
 
-  const postMessage = (e) => {
+  const createPost = (e) => {
     e.preventDefault();
     setLoading(true);
+    let user;
+    currentUser ? (user = currentUser) : (user = "anonymous");
+
     firestore
-      .collection("messages")
-      .add({
-        message,
-      })
+      .collection("posts")
+      .add({ message: post.message, user })
       .then(function (docRef) {
-        setAlert(`Message Posted with ID of ${docRef.id}`, "success");
+        setAlert(`Post created with ID of ${docRef.id}`, "success");
         setLoading(false);
-        setMessage("");
+        setPost({ message: "", user: {} });
       })
       .catch(function (error) {
         setLoading(false);
@@ -35,22 +36,22 @@ const PostForm = ({ setAlert }) => {
   };
 
   const getMessagesRealtime = () => {
-    firestore.collection("messages").onSnapshot((querySnapshot) => {
-      let currentMessages = [];
-      querySnapshot.forEach((doc) => currentMessages.push(doc.data()));
-      setMessages(currentMessages);
+    firestore.collection("posts").onSnapshot((querySnapshot) => {
+      let currentPosts = [];
+      querySnapshot.forEach((doc) => currentPosts.push(doc.data()));
+      setPosts(currentPosts);
     });
   };
 
   getMessagesRealtime();
-
+  const { message } = post;
   return (
     <>
       <div className="post-form">
         {loading ? (
           <Spinner />
         ) : (
-          <form onSubmit={postMessage}>
+          <form onSubmit={createPost}>
             <input
               type="text"
               placeholder="Enter a message"
@@ -62,8 +63,8 @@ const PostForm = ({ setAlert }) => {
         )}
       </div>
       <div className="message-display">
-        {messages.map((msg, i) => (
-          <Message key={i} message={msg.message} />
+        {posts.map((p, i) => (
+          <Message key={i} message={p.message} user={p.user.email} />
         ))}
       </div>
     </>

@@ -67,7 +67,11 @@ class App extends Component {
             }
           />
           <Route exact path="/articles" component={Articles} />
-          <Route exact path="/post" component={PostForm} />
+          <Route
+            exact
+            path="/post"
+            render={() => <PostForm currentUser={this.state.currentUser} />}
+          />
         </Switch>
       </Provider>
     );

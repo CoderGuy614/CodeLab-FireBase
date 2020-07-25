@@ -16,8 +16,22 @@ button {
 }
 
 .message-display {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  padding: 15px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 15px;
   justify-content: center;
-  align-items: center;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  .message-display {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (max-width: 475px) {
+  .message-display {
+    grid-template-columns: 1fr 1fr;
+  }
 }
