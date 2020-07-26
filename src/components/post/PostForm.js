@@ -46,7 +46,7 @@ const PostForm = ({ currentUser, setAlert }) => {
   getMessagesRealtime();
   const { message } = post;
   return (
-    <>
+    <div className="container">
       <div className="sidebar">I am the Sidebar</div>
       <div className="post-form">
         {loading ? (
@@ -68,7 +68,7 @@ const PostForm = ({ currentUser, setAlert }) => {
           <Message key={i} message={p.message} user={p.user.email} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
