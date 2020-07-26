@@ -1,5 +1,6 @@
 .post-form {
-  display: flex;
+  display: grid;
+
   height: calc(50vh - 80px);
   justify-content: center;
   align-items: center;
@@ -17,11 +18,19 @@ button {
 
 .message-display {
   display: grid;
+  grid-area: messages;
   padding: 15px;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 15px;
   justify-content: center;
   text-align: center;
+}
+
+.sidebar {
+  display: block;
+  grid-area: sidebar;
+  height: calc(100vh - 80px);
+  width: 25vw;
 }
 
 @media (max-width: 800px) {

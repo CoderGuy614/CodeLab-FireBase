@@ -19,13 +19,13 @@ const PostForm = ({ currentUser, setAlert }) => {
     e.preventDefault();
     setLoading(true);
     let user;
-    currentUser ? (user = currentUser) : (user = "anonymous");
+    currentUser ? (user = currentUser) : (user = { email: "anonymous" });
 
     firestore
       .collection("posts")
       .add({ message: post.message, user })
       .then(function (docRef) {
-        setAlert(`Post created with ID of ${docRef.id}`, "success");
+        setAlert(`Post created Successfully`, "success");
         setLoading(false);
         setPost({ message: "", user: {} });
       })
@@ -47,6 +47,7 @@ const PostForm = ({ currentUser, setAlert }) => {
   const { message } = post;
   return (
     <>
+      <div className="sidebar">I am the Sidebar</div>
       <div className="post-form">
         {loading ? (
           <Spinner />
