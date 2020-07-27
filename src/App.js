@@ -8,6 +8,7 @@ import Articles from "./pages/articles/articles";
 import PostForm from "./components/post/PostForm";
 import Alert from "./components/alert/Alert";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
+import TwoByTwo from "./pages/layouts/TwoByTwo";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -67,6 +68,7 @@ class App extends Component {
             }
           />
           <Route exact path="/articles" component={Articles} />
+          <Route exact path="/layout2by2" component={TwoByTwo} />
           <Route
             exact
             path="/post"

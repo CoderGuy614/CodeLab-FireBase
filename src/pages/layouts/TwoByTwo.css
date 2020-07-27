@@ -1,0 +1,13 @@
+.two-by-two-grid {
+  display: grid;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+}
+
+.grid-size-form {
+  display: flex;
+  flex-direction: column;
+}
