@@ -54,7 +54,10 @@ button {
   .message-display {
     grid-template-columns: 1fr 1fr;
   }
-  .sidebar {
-    display: none;
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "form"
+      "messages";
   }
 }
