@@ -10,10 +10,21 @@ const TwoByTwo = () => {
     setRows(Array(Number(e.target.value)).fill(0));
   };
 
+  const makeRows = () =>
+    rows.map((row, index) => (
+      <div key={index} className="row">
+        {rows.map((col, index) => (
+          <div key={index} className="col">
+            {index + 1}
+          </div>
+        ))}
+      </div>
+    ));
+
   return (
     <>
-      <form className="grid-size-form" action="">
-        <label for="2x2"> 2 By 2</label>
+      <form className="grid-size-form">
+        <label htmlFor="2x2"> 2 By 2</label>
         <input
           checked={rows.length == 2}
           type="radio"
@@ -22,7 +33,7 @@ const TwoByTwo = () => {
           id="2x2"
           onChange={handleChange}
         />
-        <label for="3x3"> 3 By 3</label>
+        <label htmlFor="3x3"> 3 By 3</label>
         <input
           type="radio"
           checked={rows.length == 3}
@@ -31,7 +42,7 @@ const TwoByTwo = () => {
           id="3x3"
           onChange={handleChange}
         />
-        <label for="4x4"> 4 By 4</label>
+        <label htmlFor="4x4"> 4 By 4</label>
         <input
           type="radio"
           checked={rows.length == 4}
@@ -42,11 +53,7 @@ const TwoByTwo = () => {
         />
       </form>
 
-      <div className="two-by-two-grid">
-        {rows &&
-          rows.length > 0 &&
-          rows.map((row, index) => <div className="item">{index}</div>)}
-      </div>
+      <div className="two-by-two-grid">{makeRows()}</div>
     </>
   );
 };

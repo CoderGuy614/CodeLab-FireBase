@@ -1,13 +1,20 @@
 .two-by-two-grid {
   display: grid;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
 }
 
-.item {
-  width: 100px;
-  height: 100px;
+.row,
+.col {
+  width: auto;
+  height: auto;
+  border: 1px solid black;
+  margin: 5px;
 }
 
 .grid-size-form {
+  margin: 15px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
