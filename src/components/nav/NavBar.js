@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { setAlert } from "../../redux/actions/alert";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
 import "./navbar.styles.css";
 
@@ -18,10 +19,17 @@ const NavBar = ({ currentUser, setAlert }) => {
           <h3 className="hello-user">Welcome, {currentUser.email}</h3>
         )}
       </Navbar.Brand>
-      <Nav className="nav-links">
+
+      <Nav className="nav-links ml-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/post">Post</Nav.Link>
-        <Nav.Link href="/articles">ARTICLES</Nav.Link>
+        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/bootstrap/1">Bootstrap</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">CSS Grid</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Flexbox</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Other Info</NavDropdown.Item>
+        </NavDropdown>
         {currentUser ? (
           <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
         ) : (
