@@ -1,13 +1,17 @@
 #onelinelayouts {
-  margin: auto;
+  margin: 15px;
   padding: 25px;
+
+  .description {
+    margin: 15px;
+  }
 
   .ex1 .parent {
     display: grid;
     place-items: center;
     border: 1px solid black;
     background: lightblue;
-    height: 200px;
+    height: 125px;
   }
 
   .ex1 .box {
@@ -22,13 +26,25 @@
   .ex2 .box {
     width: 125px;
     height: 125px;
+    background: lightgreen;
     border: 1px solid black;
-    flex: 0 1 150px;
+    flex: 1 1 150px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  .description {
-    margin: 15px;
+
+  .ex3 .parent {
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+  }
+
+  .ex3 .section {
+    background: lightpink;
+    border: 1px solid black;
+    height: 125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
