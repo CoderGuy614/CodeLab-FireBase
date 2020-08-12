@@ -1,8 +1,7 @@
 import React from "react";
+import "./homepage.scss";
 
-import "./gridPage.css";
-
-const GridPage = () => {
+const Homepage = () => {
   return (
     <div className="grid">
       <div className="main">
@@ -36,4 +35,4 @@ const GridPage = () => {
   );
 };
 
-export default GridPage;
+export default Homepage;

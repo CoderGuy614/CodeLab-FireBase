@@ -3,13 +3,14 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.css";
 import "./custom_theme.css";
 import NavBar from "./components/nav/NavBar";
-import GridPage from "./pages/homepage/gridPage";
+
 import Articles from "./pages/articles/articles";
 import PostForm from "./components/post/PostForm";
 import Alert from "./components/alert/Alert";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
+import Homepage from "./pages/homepage/Homepage";
 import TwoByTwo from "./pages/layouts/TwoByTwo";
-import Bootstrap1 from "./pages/bootstrapSandbox/Bootstrap1";
+import Bootstrap from "./pages/bootstrapSandbox/Bootstrap";
 import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
 import CssGrid from "./pages/cssgrid/CssGrid";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
@@ -60,7 +61,7 @@ class App extends Component {
             exact
             path="/"
             render={() =>
-              !this.state.currentUser ? <Redirect to="/signin" /> : <GridPage />
+              !this.state.currentUser ? <Redirect to="/signin" /> : <Homepage />
             }
           />
           <Route
@@ -72,7 +73,7 @@ class App extends Component {
           />
           <Route exact path="/articles" component={Articles} />
           <Route exact path="/layout2by2" component={TwoByTwo} />
-          <Route exact path="/bootstrap" component={Bootstrap1} />
+          <Route exact path="/bootstrap" component={Bootstrap} />
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
           <Route exact path="/grid" component={CssGrid} />
           <Route

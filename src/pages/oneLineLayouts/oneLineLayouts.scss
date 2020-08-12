@@ -1,30 +1,26 @@
 #onelinelayouts {
   margin: auto;
   padding: 25px;
-}
 
-.ex1 .parent {
-  display: grid;
-  place-items: center;
-  border: 1px solid black;
-  background: lightblue;
-  height: 200px;
-}
+  .ex1 .parent {
+    display: grid;
+    place-items: center;
+    border: 1px solid black;
+    background: lightblue;
+    height: 200px;
+  }
 
-.ex1 .box {
-  background: coral;
-}
+  .ex1 .box {
+    background: coral;
+  }
 
-.ex2 .parent {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .ex2 .parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
-.ex2 .box {
-  flex: 1 1 150px;
-}
-
-.ex1 .test {
-  background: lightblue;
+  .ex2 .box {
+    flex: 1 1 150px;
+  }
 }

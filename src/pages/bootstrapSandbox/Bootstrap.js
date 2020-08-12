@@ -1,6 +1,6 @@
 import React from "react";
 
-const Bootstrap1 = () => {
+const Bootstrap = () => {
   return (
     <div className="m-3 text-center">
       <h2 className="display-2 d-block"> BootStrap Sandbox</h2>
@@ -14,4 +14,4 @@ const Bootstrap1 = () => {
   );
 };
 
-export default Bootstrap1;
+export default Bootstrap;
