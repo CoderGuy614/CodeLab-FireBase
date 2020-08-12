@@ -35,6 +35,9 @@ const NavBar = ({ currentUser, setAlert }) => {
           <NavDropdown.Item href="/materialui">MaterialUI</NavDropdown.Item>
           <NavDropdown.Item href="/grid">CSS Grid</NavDropdown.Item>
           <NavDropdown.Item href="/flexbox">Flexbox</NavDropdown.Item>
+          <NavDropdown.Item href="/onelinelayouts">
+            1 Line Layouts
+          </NavDropdown.Item>
         </NavDropdown>
         {currentUser ? (
           <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
