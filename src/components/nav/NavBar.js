@@ -23,12 +23,18 @@ const NavBar = ({ currentUser, setAlert }) => {
       <Nav className="nav-links ml-auto">
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/post">Post</Nav.Link>
-        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/bootstrap/1">Bootstrap</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">CSS Grid</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Flexbox</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Other Info</NavDropdown.Item>
+        <NavDropdown title="Code Snippets" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/snippets/React">MERN Stack</NavDropdown.Item>
+          <NavDropdown.Item href="/snippets/React">Vanilla JS</NavDropdown.Item>
+          <NavDropdown.Item href="/snippets/React">
+            Algo & D.S.
+          </NavDropdown.Item>
+        </NavDropdown>
+        <NavDropdown title="Design" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/bootstrap">Bootstrap</NavDropdown.Item>
+          <NavDropdown.Item href="/materialui">MaterialUI</NavDropdown.Item>
+          <NavDropdown.Item href="/grid">CSS Grid</NavDropdown.Item>
+          <NavDropdown.Item href="/flexbox">Flexbox</NavDropdown.Item>
         </NavDropdown>
         {currentUser ? (
           <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
