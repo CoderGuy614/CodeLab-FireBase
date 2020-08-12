@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Spinner from "../../loading/Spinner";
 import Alert from "react-bootstrap/Alert";
-import "./sign-in-form.css";
+import "./sign-in-form.scss";
 
 import {
   auth,

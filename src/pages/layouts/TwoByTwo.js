@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 
-import "./TwoByTwo.css";
+import "./TwoByTwo.scss";
 
 const TwoByTwo = () => {
   const [rows, setRows] = useState([0, 0]);

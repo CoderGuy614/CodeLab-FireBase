@@ -4,7 +4,7 @@ import { setAlert } from "../../redux/actions/alert";
 import Message from "../message/Message";
 import Spinner from "../loading/Spinner";
 import { firestore } from "../../firebase/firebaseUtils";
-import "./post-form.css";
+import "./post-form.scss";
 
 const PostForm = ({ currentUser, setAlert }) => {
   const [post, setPost] = useState({ message: "" });
@@ -46,7 +46,7 @@ const PostForm = ({ currentUser, setAlert }) => {
   getMessagesRealtime();
   const { message } = post;
   return (
-    <div className="container">
+    <div className="post-container">
       <div className="sidebar">I am the Sidebar</div>
       <div className="post-form">
         {loading ? (

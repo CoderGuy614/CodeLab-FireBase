@@ -17,10 +17,18 @@
   .ex2 .parent {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   .ex2 .box {
-    flex: 1 1 150px;
+    width: 125px;
+    height: 125px;
+    border: 1px solid black;
+    flex: 0 1 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description {
+    margin: 15px;
   }
 }

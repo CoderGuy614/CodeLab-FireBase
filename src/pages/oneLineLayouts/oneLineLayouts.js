@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import "./oneLineLayouts.scss";
 
 const superCentered = () => (
-  <div className="ex1 test">
+  <div className="ex1">
     <div className="parent lightblue">
       <div className="box coral" contentEditable>
         You Can Edit Me :)
@@ -51,7 +51,6 @@ const OneLineLayouts = () => {
   return (
     <div id="onelinelayouts" className="container">
       {superCentered()}
-
       {deconstructedPancake()}
     </div>
   );
