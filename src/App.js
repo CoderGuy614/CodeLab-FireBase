@@ -11,6 +11,7 @@ import SignInAndSignUp from "./pages/signin-signup/signin-signup";
 import TwoByTwo from "./pages/layouts/TwoByTwo";
 import Bootstrap1 from "./pages/bootstrapSandbox/Bootstrap1";
 import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
+import CssGrid from "./pages/cssgrid/CssGrid";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -73,6 +74,7 @@ class App extends Component {
           <Route exact path="/layout2by2" component={TwoByTwo} />
           <Route exact path="/bootstrap" component={Bootstrap1} />
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
+          <Route exact path="/grid" component={CssGrid} />
           <Route
             exact
             path="/post"
