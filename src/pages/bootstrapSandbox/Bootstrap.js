@@ -64,6 +64,37 @@ const Bootstrap = () => {
             </a>
           </div>
         </div>
+
+        {/* Card with Header */}
+        <div class="card">
+          <div class="card-header">My Card</div>
+          <div class="card-body">
+            <h4 class="card-title">Card Title</h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+              perspiciatis.
+            </p>
+            <a class="btn btn-info" href="#">
+              Read More
+            </a>
+          </div>
+        </div>
+
+        {/* Header, Footer, Centered  */}
+        <div class="card text-center">
+          <div class="card-header">My Card</div>
+          <div class="card-body">
+            <h4 class="card-title">Card Title</h4>
+            <p class="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+              perspiciatis.
+            </p>
+            <a class="btn btn-dark" href="#">
+              Read More
+            </a>
+          </div>
+          <div class="card-footer text-muted">2 Days Ago</div>
+        </div>
       </div>
     </div>
   );
