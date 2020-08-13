@@ -42,7 +42,7 @@ const Bootstrap = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo,
               quas.
             </p>
-            <a className="btn btn-primary" href="#">
+            <a className="btn btn-primary" href="https://getbootstrap.com">
               Read More
             </a>
           </div>
@@ -60,7 +60,10 @@ const Bootstrap = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo,
               quas.
             </p>
-            <a className="btn btn-success btn-block" href="#">
+            <a
+              className="btn btn-success btn-block"
+              href="https://getbootstrap.com"
+            >
               Read More
             </a>
           </div>
@@ -75,7 +78,7 @@ const Bootstrap = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
               perspiciatis.
             </p>
-            <a class="btn btn-info" href="#">
+            <a class="btn btn-info" href="https://getbootstrap.com">
               Read More
             </a>
           </div>
@@ -90,7 +93,7 @@ const Bootstrap = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
               perspiciatis.
             </p>
-            <a class="btn btn-dark" href="#">
+            <a class="btn btn-dark" href="https://getbootstrap.com">
               Read More
             </a>
           </div>
@@ -122,17 +125,17 @@ const Bootstrap = () => {
           <div className="card-header">
             <ul className="nav nav-tabs card-header-tabs">
               <li className="nav-item">
-                <a className="nav-link active" href="#">
+                <a className="nav-link active" href="https://getbootstrap.com">
                   Active
                 </a>
               </li>
               <li>
-                <a a className="nav-link" href="#">
+                <a a className="nav-link" href="https://getbootstrap.com">
                   Link
                 </a>
               </li>
               <li>
-                <a a className="nav-link" href="#">
+                <a a className="nav-link" href="https://getbootstrap.com">
                   Disabled
                 </a>
               </li>
@@ -144,7 +147,7 @@ const Bootstrap = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
               perspiciatis.
             </p>
-            <a className="btn btn-success" href="#">
+            <a className="btn btn-success" href="https://getbootstrap.com">
               Read More
             </a>
           </div>

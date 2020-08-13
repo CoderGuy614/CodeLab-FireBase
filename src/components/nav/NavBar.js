@@ -27,7 +27,7 @@ const NavBar = ({ currentUser, setAlert }) => {
           <NavDropdown.Item href="/snippets/React">MERN Stack</NavDropdown.Item>
           <NavDropdown.Item href="/snippets/React">Vanilla JS</NavDropdown.Item>
           <NavDropdown.Item href="/snippets/React">
-            Algo & D.S.
+            Algorithms and Data Structures
           </NavDropdown.Item>
         </NavDropdown>
         <NavDropdown title="Design" id="basic-nav-dropdown">
