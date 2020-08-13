@@ -2,6 +2,11 @@
   margin: 15px;
   padding: 25px;
 
+  hr {
+    margin-top: 30px;
+    border-top: 2px solid gray;
+  }
+
   .green {
     background: lightgreen;
   }
@@ -23,7 +28,7 @@
   }
 
   .description {
-    margin: 15px;
+    margin: 20px;
   }
 
   .section,
