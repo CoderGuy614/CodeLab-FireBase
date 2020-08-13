@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Button from "react-bootstrap/Button";
-import "./navbar.styles.css";
+import "./navbar.styles.scss";
 
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebaseUtils";
@@ -32,7 +32,9 @@ const NavBar = ({ currentUser, setAlert }) => {
         </NavDropdown>
         <NavDropdown title="Design" id="basic-nav-dropdown">
           <NavDropdown.Item href="/bootstrap">Bootstrap</NavDropdown.Item>
-          <NavDropdown.Item href="/materialui">MaterialUI</NavDropdown.Item>
+          <NavDropdown.Item href="/reactbootstrap">
+            React Bootstrap
+          </NavDropdown.Item>
           <NavDropdown.Item href="/grid">CSS Grid</NavDropdown.Item>
           <NavDropdown.Item href="/flexbox">Flexbox</NavDropdown.Item>
           <NavDropdown.Item href="/onelinelayouts">

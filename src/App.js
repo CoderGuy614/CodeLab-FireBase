@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import "./custom_theme.css";
 import NavBar from "./components/nav/NavBar";
 
@@ -10,8 +10,10 @@ import SignInAndSignUp from "./pages/signin-signup/signin-signup";
 import Homepage from "./pages/homepage/Homepage";
 import TwoByTwo from "./pages/layouts/TwoByTwo";
 import Bootstrap from "./pages/bootstrapSandbox/Bootstrap";
+import ReactBootstrap from "./pages/reactBootstrap/ReactBootstrap";
 import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
 import CssGrid from "./pages/cssgrid/CssGrid";
+import Flexbox from "./pages/flexbox/Flexbox";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -73,6 +75,8 @@ class App extends Component {
 
           <Route exact path="/layout2by2" component={TwoByTwo} />
           <Route exact path="/bootstrap" component={Bootstrap} />
+          <Route exact path="/reactbootstrap" component={ReactBootstrap} />
+          <Route exact path="/flexbox" component={Flexbox} />
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
           <Route exact path="/grid" component={CssGrid} />
           <Route

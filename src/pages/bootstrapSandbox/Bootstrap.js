@@ -98,21 +98,24 @@ const Bootstrap = () => {
         </div>
 
         {/* Card Image Overlay */}
-        <Card className="bg-dark text-white">
-          <Card.Img
-            src="https://source.unsplash.com/random/350x350"
-            alt="Card image"
+        <div class="card text-white">
+          <img
+            class="card-img"
+            src="https://source.unsplash.com/random/1000x1000"
+            alt=""
           />
-          <Card.ImgOverlay>
-            <Card.Title>Card title</Card.Title>
-            <Card.Text>
+          <div class="card-img-overlay">
+            <h4 class="card-title">Card title</h4>
+            <p class="card-text">
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
               longer.
-            </Card.Text>
-            <Card.Text>Last updated 3 mins ago</Card.Text>
-          </Card.ImgOverlay>
-        </Card>
+            </p>
+            <p>
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
 
         {/* Card with Nav  */}
         <div className="card">
