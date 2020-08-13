@@ -7,4 +7,8 @@
 .card {
   margin: 15px;
   max-width: 250px;
+
+  .card-img .overlay-full {
+    height: 100%;
+  }
 }

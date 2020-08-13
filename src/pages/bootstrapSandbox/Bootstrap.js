@@ -1,5 +1,6 @@
 import React from "react";
 import "./bootstrap.scss";
+import { Card } from "react-bootstrap";
 
 const Bootstrap = () => {
   return (
@@ -97,22 +98,52 @@ const Bootstrap = () => {
         </div>
 
         {/* Card Image Overlay */}
-        <div className="card text-white">
-          <img
-            className="card-img"
-            src="https://source.unsplash.com/random/250x125"
-            alt=""
+        <Card className="bg-dark text-white">
+          <Card.Img
+            src="https://source.unsplash.com/random/350x350"
+            alt="Card image"
           />
-          <div className="card-img-overlay">
-            <h4 className="card-title">Card title</h4>
-            <p className="card-text">
+          <Card.ImgOverlay>
+            <Card.Title>Card title</Card.Title>
+            <Card.Text>
               This is a wider card with supporting text below as a natural
               lead-in to additional content. This content is a little bit
               longer.
+            </Card.Text>
+            <Card.Text>Last updated 3 mins ago</Card.Text>
+          </Card.ImgOverlay>
+        </Card>
+
+        {/* Card with Nav  */}
+        <div className="card">
+          <div className="card-header">
+            <ul className="nav nav-tabs card-header-tabs">
+              <li className="nav-item">
+                <a className="nav-link active" href="#">
+                  Active
+                </a>
+              </li>
+              <li>
+                <a a className="nav-link" href="#">
+                  Link
+                </a>
+              </li>
+              <li>
+                <a a className="nav-link" href="#">
+                  Disabled
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="card-body">
+            <h4 className="card-title">Card Title</h4>
+            <p className="card-text">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut,
+              perspiciatis.
             </p>
-            <p>
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
+            <a className="btn btn-success" href="#">
+              Read More
+            </a>
           </div>
         </div>
       </div>
