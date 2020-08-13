@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 
 const HomeCard = ({ imageUrl, title, text, buttonText, linkUrl }) => {
   return (
-    <Card>
+    <Card style={{ width: "200px" }}>
       <Card.Img
         variant="top"
         src="https://source.unsplash.com/random/150x150"
@@ -11,7 +11,7 @@ const HomeCard = ({ imageUrl, title, text, buttonText, linkUrl }) => {
       />
       <Card.Body>
         <Card.Title>{title || "Card Title"}</Card.Title>
-        <Card.Text>
+        <Card.Text style={{ height: "90px" }}>
           {text || "Lorem ipsum dolor sit amet, consectetur adipisicing elit"}
         </Card.Text>
         <Button variant="primary" block>

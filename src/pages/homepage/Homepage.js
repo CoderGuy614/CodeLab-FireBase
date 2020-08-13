@@ -16,6 +16,8 @@ const Homepage = () => {
 
       {/* Cards Section */}
       <div className="card-container">
+        <HomeCard title="I am a Title" text="I am some text" />
+        <HomeCard />
         <HomeCard />
         <HomeCard />
         <HomeCard />
