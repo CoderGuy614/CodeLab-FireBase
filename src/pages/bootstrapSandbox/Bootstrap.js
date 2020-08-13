@@ -95,6 +95,26 @@ const Bootstrap = () => {
           </div>
           <div class="card-footer text-muted">2 Days Ago</div>
         </div>
+
+        {/* Card Image Overlay */}
+        <div className="card text-white">
+          <img
+            className="card-img"
+            src="https://source.unsplash.com/random/250x125"
+            alt=""
+          />
+          <div className="card-img-overlay">
+            <h4 className="card-title">Card title</h4>
+            <p className="card-text">
+              This is a wider card with supporting text below as a natural
+              lead-in to additional content. This content is a little bit
+              longer.
+            </p>
+            <p>
+              <small className="text-muted">Last updated 3 mins ago</small>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
