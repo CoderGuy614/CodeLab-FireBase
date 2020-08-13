@@ -4,7 +4,6 @@ import "./App.css";
 import "./custom_theme.css";
 import NavBar from "./components/nav/NavBar";
 
-import Articles from "./pages/articles/articles";
 import PostForm from "./components/post/PostForm";
 import Alert from "./components/alert/Alert";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
@@ -71,7 +70,7 @@ class App extends Component {
               this.state.currentUser ? <Redirect to="/" /> : <SignInAndSignUp />
             }
           />
-          <Route exact path="/articles" component={Articles} />
+
           <Route exact path="/layout2by2" component={TwoByTwo} />
           <Route exact path="/bootstrap" component={Bootstrap} />
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
