@@ -1,5 +1,55 @@
 .flexbox-page-container {
+  .flexbox-card {
+    min-width: 200px;
+  }
   .card-body {
     background: lightseagreen;
+  }
+  .card-header {
+    background: lightblue;
+  }
+
+  #basic-flexbox .parent {
+    display: flex;
+  }
+
+  #basic-flexbox-wrap .parent {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #basic-flexbox-column .parent {
+    display: flex;
+    flex-flow: column wrap;
+    height: 350px;
+  }
+
+  #flexbox-justify-content {
+    .parent {
+      display: flex;
+      width: 100%;
+      border: 1px solid black;
+      &.center {
+        justify-content: center;
+      }
+      &.left {
+        justify-content: flex-start;
+      }
+      &.right {
+        justify-content: flex-end;
+      }
+      &.space-between {
+        justify-content: space-between;
+      }
+      &.space-around {
+        justify-content: space-around;
+      }
+      &.space-evenly {
+        justify-content: space-evenly;
+      }
+    }
+    .item {
+      padding: 1.5em;
+    }
   }
 }
