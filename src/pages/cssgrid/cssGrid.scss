@@ -1,11 +1,59 @@
-.ex1 .container {
-  margin-top: 15px;
-  display: grid;
-  grid-template-columns: 150px 150px 150px;
-  grid-template-rows: 150px 150px;
-  grid-gap: 1rem;
+.ex1 {
+  .container {
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px;
+    grid-gap: 1rem;
+    text-align: center;
+  }
+  .item {
+    background-color: lightskyblue;
+    border: 1px solid black;
+    padding-top: 65px;
+  }
 }
 
-.ex1 .item {
-  background-color: lightskyblue;
+.ex2 {
+  .container {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .item {
+    background-color: lightgreen;
+    height: 50px;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+.ex3 {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .item {
+    background-color: lightpink;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+.ex4 {
+  .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+  }
+
+  .item {
+    background-color: lightgoldenrodyellow;
+    border: 1px solid black;
+    padding: 15px;
+  }
 }
