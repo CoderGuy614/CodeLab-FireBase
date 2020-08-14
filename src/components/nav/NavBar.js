@@ -22,15 +22,15 @@ const NavBar = ({ currentUser, setAlert }) => {
 
       <Nav className="nav-links ml-auto">
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/post">Post</Nav.Link>
-        <NavDropdown title="Code Snippets" id="basic-nav-dropdown">
-          <NavDropdown.Item href="/snippets/React">MERN Stack</NavDropdown.Item>
-          <NavDropdown.Item href="/snippets/React">Vanilla JS</NavDropdown.Item>
-          <NavDropdown.Item href="/snippets/React">
-            Algorithms and Data Structures
+
+        <NavDropdown title="Back-End" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/backend/firebase">
+            Google Firebase
           </NavDropdown.Item>
+          <NavDropdown.Item href="/backend/strapi">Strapi CMS</NavDropdown.Item>
         </NavDropdown>
-        <NavDropdown title="Design" id="basic-nav-dropdown">
+
+        <NavDropdown title="Front-End" id="basic-nav-dropdown">
           <NavDropdown.Item href="/bootstrap">Bootstrap</NavDropdown.Item>
           <NavDropdown.Item href="/reactbootstrap">
             React Bootstrap
@@ -41,6 +41,15 @@ const NavBar = ({ currentUser, setAlert }) => {
             1 Line Layouts
           </NavDropdown.Item>
         </NavDropdown>
+
+        <NavDropdown title="Code Snippets" id="basic-nav-dropdown">
+          <NavDropdown.Item href="/snippets/React">MERN Stack</NavDropdown.Item>
+          <NavDropdown.Item href="/snippets/React">Vanilla JS</NavDropdown.Item>
+          <NavDropdown.Item href="/snippets/React">
+            Algorithms and Data Structures
+          </NavDropdown.Item>
+        </NavDropdown>
+
         {currentUser ? (
           <Button onClick={() => auth.signOut()}>SIGNOUT</Button>
         ) : (

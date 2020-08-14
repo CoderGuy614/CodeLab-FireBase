@@ -3,18 +3,15 @@ import "./cssGrid.scss";
 
 const CssGrid = () => {
   return (
-    <div className="grid">
-      <div className="main">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur,
-        qui!
-      </div>
-      <div className="secondary">
-        {" "}
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, aliquam?
-      </div>
-      <div className="sidebar">
-        {" "}
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, earum.
+    <div className="ex1">
+      <h3 className="text-center mt-3">Basic Grid Layout</h3>
+      <div className="container">
+        <div className="item item1"></div>
+        <div className="item item2"></div>
+        <div className="item item3"></div>
+        <div className="item item4"></div>
+        <div className="item item5"></div>
+        <div className="item item6"></div>
       </div>
     </div>
   );
