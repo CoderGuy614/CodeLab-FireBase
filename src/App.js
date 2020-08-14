@@ -4,6 +4,7 @@ import "./App.scss";
 import "./custom_theme.css";
 import NavBar from "./components/nav/NavBar";
 
+import Algo from "./pages/algo/Algo";
 import PostForm from "./components/post/PostForm";
 import Alert from "./components/alert/Alert";
 import SignInAndSignUp from "./pages/signin-signup/signin-signup";
@@ -15,6 +16,7 @@ import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
 import CssGrid from "./pages/cssgrid/CssGrid";
 import Flexbox from "./pages/flexbox/Flexbox";
 import MaterialUi from "./pages/materialui/MaterialUi";
+
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -75,6 +77,7 @@ class App extends Component {
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
           <Route exact path="/grid" component={CssGrid} />
           <Route exact path="/materialui" component={MaterialUi} />
+          <Route exact path="/snippets/algo" component={Algo} />
           <Route
             exact
             path="/post"

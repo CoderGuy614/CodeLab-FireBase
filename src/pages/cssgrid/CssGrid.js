@@ -38,7 +38,7 @@ const CssGrid = () => {
 
       <div className="ex4">
         <h3 className="text-center mt-3">Grid Template Rows & Columns</h3>
-        <div className="container">
+        <div className="container mb-3">
           <div className="item item1">Row 1</div>
           <div className="item item2">3Fr height</div>
           <div className="item item2">3 Columns</div>
