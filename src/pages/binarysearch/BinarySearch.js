@@ -16,40 +16,104 @@ const BinarySearch = () => {
     const [open2, setOpen2] = useState(false);
     const [open3, setOpen3] = useState(false);
 
+    const closeAll = () => {
+      setOpen1(false);
+      setOpen2(false);
+      setOpen3(false);
+    };
+
     return (
       <>
         <Button
-          onClick={() => setOpen1(!open1)}
+          onClick={() => {
+            closeAll();
+            setOpen1(!open1);
+          }}
           aria-controls="example-collapse-text"
           aria-expanded={open1}
         >
-          {" "}
-          Hint 1
+          {open1 ? "Hide" : "Hint 1"}
         </Button>
         <Button
-          onClick={() => setOpen2(!open2)}
+          onClick={() => {
+            closeAll();
+            setOpen2(!open2);
+          }}
           aria-controls="example-collapse-text"
           aria-expanded={open2}
         >
-          Hint 2{" "}
+          {open2 ? "Hide" : "Hint 2"}
         </Button>
         <Button
-          onClick={() => setOpen3(!open3)}
+          onClick={() => {
+            closeAll();
+            setOpen3(!open3);
+          }}
           aria-controls="example-collapse-text"
           aria-expanded={open3}
         >
-          {" "}
-          Hint 3
+          {open3 ? "Hide" : "Hint 3"}
         </Button>
 
         <Collapse in={open1}>
-          <div id="example-collapse-text">
-            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-            terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-            labore wes anderson cred nesciunt sapiente ea proident.
+          <div id="example-collapse-text" className="mt-2 text-info">
+            <p>Hint 1:</p>
+            <hr />
+            <p>
+              Try using 2 loops to iterate through the array and find the target
+              sum.
+            </p>
+          </div>
+        </Collapse>
+        <Collapse in={open2}>
+          <div id="example-collapse-text" className="mt-2 text-info">
+            <p>Hint 2:</p>
+            <hr />
+            <p>
+              {" "}
+              Consider if you could solve this with a single loop. Remember that
+              you know that X + Y = targetSum, and two of those three are known
+              values on a single iteration, meaning you can easily solve for the
+              third value.
+            </p>
+          </div>
+        </Collapse>
+        <Collapse in={open3}>
+          <div id="example-collapse-text" className="mt-2 text-info">
+            <p>Hint 3:</p>
+            <hr />
+            <p>
+              {" "}
+              Consider using a hash table to store the value of each entry to
+              reduce the time and space complexity of the solution.
+            </p>
           </div>
         </Collapse>
       </>
+    );
+  };
+
+  const Solution = () => {
+    const [open4, setOpen4] = useState(false);
+
+    return (
+      <div className="mt-2 test">
+        <Button
+          block
+          onClick={() => {
+            setOpen4(!open4);
+          }}
+          aria-controls="example-collapse-text"
+          aria-expanded={open4}
+        >
+          {open4 ? "Hide Solution" : "Show Solution"}
+        </Button>
+        <Collapse in={open4}>
+          <div id="example-collapse-text" className="mt-2">
+            Solution Goes Here
+          </div>
+        </Collapse>
+      </div>
     );
   };
 
@@ -77,6 +141,14 @@ const BinarySearch = () => {
         <Col xs={12} md={6} className="problem-hints">
           <h4 className="text-center py-2">Hints: </h4>
           <Hints />
+        </Col>
+      </Row>
+      <hr />
+      <Row className="my-4">
+        <Col md={{ span: 6, offset: 3 }} className="problem-solution">
+          <h3 className="text-center py-2">Solution: </h3>
+
+          <Solution />
         </Col>
       </Row>
     </Container>
