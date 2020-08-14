@@ -22,7 +22,7 @@ const TwoByTwo = () => {
     ));
 
   return (
-    <>
+    <div id="#twobytwo">
       <form className="grid-size-form">
         <label htmlFor="2x2"> 2 By 2</label>
         <input
@@ -54,7 +54,7 @@ const TwoByTwo = () => {
       </form>
 
       <div className="two-by-two-grid">{makeRows()}</div>
-    </>
+    </div>
   );
 };
 export default TwoByTwo;
