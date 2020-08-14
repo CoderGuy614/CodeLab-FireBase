@@ -19,28 +19,28 @@ const Algo = () => {
       {/* Cards Section */}
       <div className="card-container">
         <HomeCard
-          title="Bootstrap4"
-          text="Snippets and examples of the most popular front end framework"
+          title="CodeWars 8Kyu"
+          text="Some easy codewars problem"
           imageUrl={codewars}
-          linkUrl={"/bootstrap"}
+          linkUrl={"/snippets/algo/codewars/1"}
         />
         <HomeCard
-          title="React Bootstrap"
-          text="Bootstrap, Rebuilt for React"
-          imageUrl={codewars}
-          linkUrl={"/reactBootstrap"}
-        />
-        <HomeCard
-          title="CSS Grid"
-          text="Layouts and Design using CSS Grid"
+          title="Binary Search Algorithm"
+          text="A common searching algoritm for sorted arrays"
           imageUrl={javascript}
-          linkUrl={"/grid"}
+          linkUrl={"/snippets/algo/binarysearch"}
         />
         <HomeCard
-          title="Flexbox"
-          text="Layouts and Design using Flexbox"
+          title="Two-Number Sum Algorithm"
+          text="A classic interview challenge questions"
           imageUrl={javascript}
-          linkUrl={"/flexbox"}
+          linkUrl={"/snippets/algo/twonumbersum"}
+        />
+        <HomeCard
+          title="Nth Fibbonacci Algorithm"
+          text="Not as difficult as it sounds! :)"
+          imageUrl={javascript}
+          linkUrl={"/snippets/algo/fib"}
         />
       </div>
     </Container>

@@ -17,6 +17,8 @@ import CssGrid from "./pages/cssgrid/CssGrid";
 import Flexbox from "./pages/flexbox/Flexbox";
 import MaterialUi from "./pages/materialui/MaterialUi";
 
+import BinarySearch from "./pages/binarysearch/BinarySearch";
+
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -78,6 +80,11 @@ class App extends Component {
           <Route exact path="/grid" component={CssGrid} />
           <Route exact path="/materialui" component={MaterialUi} />
           <Route exact path="/snippets/algo" component={Algo} />
+          <Route
+            exact
+            path="/snippets/algo/binarysearch"
+            component={BinarySearch}
+          />
           <Route
             exact
             path="/post"
