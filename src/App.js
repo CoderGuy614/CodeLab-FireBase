@@ -14,6 +14,7 @@ import ReactBootstrap from "./pages/reactBootstrap/ReactBootstrap";
 import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
 import CssGrid from "./pages/cssgrid/CssGrid";
 import Flexbox from "./pages/flexbox/Flexbox";
+import MaterialUi from "./pages/materialui/MaterialUi";
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
 //Redux
@@ -58,13 +59,7 @@ class App extends Component {
         <NavBar currentUser={this.state.currentUser} />
         <Alert />
         <Switch>
-          <Route
-            exact
-            path="/"
-            render={() =>
-              !this.state.currentUser ? <Redirect to="/signin" /> : <Homepage />
-            }
-          />
+          <Route exact path="/" component={Homepage} />
           <Route
             exact
             path="/signin"
@@ -79,6 +74,7 @@ class App extends Component {
           <Route exact path="/flexbox" component={Flexbox} />
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
           <Route exact path="/grid" component={CssGrid} />
+          <Route exact path="/materialui" component={MaterialUi} />
           <Route
             exact
             path="/post"
