@@ -19,6 +19,8 @@ import MaterialUi from "./pages/materialui/MaterialUi";
 
 import BinarySearch from "./pages/binarysearch/BinarySearch";
 import Codewars1 from "./pages/codewars1/Codewars1";
+import TwoNumberSum from "./pages/twonumbersum/TwoNumberSum";
+import NthFib from "./pages/nthFib/NthFib";
 
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
@@ -87,6 +89,12 @@ class App extends Component {
             component={BinarySearch}
           />
           <Route exact path="/snippets/algo/codewars/1" component={Codewars1} />
+          <Route
+            exact
+            path="/snippets/algo/twonumbersum"
+            component={TwoNumberSum}
+          />
+          <Route exact path="/snippets/algo/fib" component={NthFib} />
 
           <Route
             exact
