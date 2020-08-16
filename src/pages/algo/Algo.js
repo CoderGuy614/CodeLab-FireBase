@@ -19,8 +19,8 @@ const Algo = () => {
       {/* Cards Section */}
       <div className="card-container">
         <HomeCard
-          title="CodeWars 8Kyu"
-          text="Some easy codewars problem"
+          title="CodeWars - Find the Capitals"
+          text="7 Kyu Codewars Challenge"
           imageUrl={codewars}
           linkUrl={"/snippets/algo/codewars/1"}
         />

@@ -18,6 +18,7 @@ import Flexbox from "./pages/flexbox/Flexbox";
 import MaterialUi from "./pages/materialui/MaterialUi";
 
 import BinarySearch from "./pages/binarysearch/BinarySearch";
+import Codewars1 from "./pages/codewars1/Codewars1";
 
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
@@ -85,6 +86,8 @@ class App extends Component {
             path="/snippets/algo/binarysearch"
             component={BinarySearch}
           />
+          <Route exact path="/snippets/algo/codewars/1" component={Codewars1} />
+
           <Route
             exact
             path="/post"
