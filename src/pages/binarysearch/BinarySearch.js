@@ -110,7 +110,7 @@ const BinarySearch = () => {
         </Button>
         <Collapse in={open4}>
           <div id="example-collapse-text" className="mt-2">
-            Solution Goes Here
+            Solution Goes Here... Not yet finished.
           </div>
         </Collapse>
       </div>
