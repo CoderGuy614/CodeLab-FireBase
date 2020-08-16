@@ -22,6 +22,8 @@ import Codewars1 from "./pages/codewars1/Codewars1";
 import TwoNumberSum from "./pages/twonumbersum/TwoNumberSum";
 import NthFib from "./pages/nthFib/NthFib";
 import MernStack from "./pages/mernStack/MernStack";
+import Firebase from "./pages/firebase/Firebase";
+import Strapi from "./pages/strapi/Strapi";
 
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
@@ -85,6 +87,8 @@ class App extends Component {
           <Route exact path="/materialui" component={MaterialUi} />
           <Route exact path="/snippets/algo" component={Algo} />
           <Route exact path="/snippets/mern" component={MernStack} />
+          <Route exact path="/backend/Firebase" component={Firebase} />
+          <Route exact path="/backend/Strapi" component={Strapi} />
           <Route
             exact
             path="/snippets/algo/binarysearch"

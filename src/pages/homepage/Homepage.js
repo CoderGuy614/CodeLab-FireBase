@@ -8,6 +8,8 @@ import bootstrap4 from "../../img/bootstrap4.jpeg";
 import cssGrid from "../../img/css.png";
 import flexbox from "../../img/flexbox.jpeg";
 import material from "../../img/material.png";
+import strapi from "../../img/strapi.png";
+import firebase from "../../img/firebase.png";
 
 const Homepage = () => {
   return (
@@ -57,6 +59,18 @@ const Homepage = () => {
           text="Some neat layouts using minimal lines of CSS"
           imageUrl={cssGrid}
           linkUrl={"/onelinelayouts"}
+        />
+        <HomeCard
+          title="Strapi CMS"
+          text="Strapi Content Management System"
+          imageUrl={strapi}
+          linkUrl={"/backend/strapi"}
+        />
+        <HomeCard
+          title="Google Firebase"
+          text="Google's Application Building Platform"
+          imageUrl={firebase}
+          linkUrl={"/backend/firebase"}
         />
       </div>
     </Container>
