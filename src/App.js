@@ -21,6 +21,7 @@ import BinarySearch from "./pages/binarysearch/BinarySearch";
 import Codewars1 from "./pages/codewars1/Codewars1";
 import TwoNumberSum from "./pages/twonumbersum/TwoNumberSum";
 import NthFib from "./pages/nthFib/NthFib";
+import MernStack from "./pages/mernStack/MernStack";
 
 import { auth, createUserProfileDocument } from "./firebase/firebaseUtils";
 
@@ -83,6 +84,7 @@ class App extends Component {
           <Route exact path="/grid" component={CssGrid} />
           <Route exact path="/materialui" component={MaterialUi} />
           <Route exact path="/snippets/algo" component={Algo} />
+          <Route exact path="/snippets/mern" component={MernStack} />
           <Route
             exact
             path="/snippets/algo/binarysearch"
