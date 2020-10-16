@@ -35,6 +35,9 @@ const NavBar = ({ currentUser, setAlert }) => {
           <NavDropdown.Item href="/reactbootstrap">
             React Bootstrap
           </NavDropdown.Item>
+          <NavDropdown.Item href="/semantic">
+            Semantic UI React
+          </NavDropdown.Item>
           <NavDropdown.Item href="/grid">CSS Grid</NavDropdown.Item>
           <NavDropdown.Item href="/flexbox">Flexbox</NavDropdown.Item>
           <NavDropdown.Item href="/onelinelayouts">

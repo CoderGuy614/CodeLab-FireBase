@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import "./App.scss";
 import "./custom_theme.css";
+import 'semantic-ui-css/semantic.min.css'
 import NavBar from "./components/nav/NavBar";
 
 import Algo from "./pages/algo/Algo";
@@ -12,6 +13,7 @@ import Homepage from "./pages/homepage/Homepage";
 import TwoByTwo from "./pages/layouts/TwoByTwo";
 import Bootstrap from "./pages/bootstrapSandbox/Bootstrap";
 import ReactBootstrap from "./pages/reactBootstrap/ReactBootstrap";
+import Semantic from './pages/semantic/Semantic'
 import OneLineLayouts from "./pages/oneLineLayouts/oneLineLayouts";
 import CssGrid from "./pages/cssgrid/CssGrid";
 import Flexbox from "./pages/flexbox/Flexbox";
@@ -85,6 +87,7 @@ class App extends Component {
           <Route exact path="/onelinelayouts" component={OneLineLayouts} />
           <Route exact path="/grid" component={CssGrid} />
           <Route exact path="/materialui" component={MaterialUi} />
+          <Route exact path="/semantic" component={Semantic} />
           <Route exact path="/snippets/algo" component={Algo} />
           <Route exact path="/snippets/mern" component={MernStack} />
           <Route exact path="/backend/Firebase" component={Firebase} />
