@@ -1,6 +1,7 @@
 import React from 'react'
 import './semantic.scss'
 import {Button, Card, Icon, Image} from 'semantic-ui-react'
+import Modal from './modal/Modal'
 
 
 const Semantic = () => {
@@ -31,6 +32,7 @@ const Semantic = () => {
     </Card.Content>
   </Card>
       </div>
+      <Modal />
         </div>
     
     )
