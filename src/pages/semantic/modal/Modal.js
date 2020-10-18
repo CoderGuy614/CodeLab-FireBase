@@ -16,10 +16,6 @@ function ModalExampleModal() {
         <Image size='medium' src='https://source.unsplash.com/random/1000x1000' wrapped />
         <Modal.Description>
           <Header>Default Profile Image</Header>
-          <p>
-            We've found the following gravatar image associated with your e-mail
-            address.
-          </p>
           <p>Is it okay to use this photo?</p>
         </Modal.Description>
       </Modal.Content>
